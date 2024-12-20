@@ -1,17 +1,20 @@
 ## Concise Guide For Setting Up `SEOBNREPHMv5`
 
+Walkaround install to avoid bugs in `pygsl_lite` and add `PyCBC` hooks
+
+
 ### Easy
 
 ```bash
 conda env create -f env.yml
 conda activate seobnrv5
-git clone [...]
-cd [...]
+git clone https://github.com/Zhaoty96/pyseobnr_pygsl.git
+cd pyseobnr_pygsl
 pip install .
 ```
+---
 
-
-## Lagecy
+## Legacy
 
 ### 0. Install GSL and BLAS Libraries
 
