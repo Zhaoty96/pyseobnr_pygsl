@@ -5,8 +5,8 @@ Contains functions associated with evolving the equations of motion.
 from typing import Callable
 
 import numpy as np
-import pygsl_lite.errno as errno
-import pygsl_lite.odeiv2 as odeiv2
+import pygsl.errno as errno
+import pygsl.odeiv2 as odeiv2
 from numba import *
 from scipy.interpolate import CubicSpline
 
@@ -26,9 +26,9 @@ from .pn_evolution_opt import (
 # Test cythonization of PN equations
 
 
-step = odeiv2.pygsl_lite_odeiv2_step
-_control = odeiv2.pygsl_lite_odeiv2_control
-evolve = odeiv2.pygsl_lite_odeiv2_evolve
+step = odeiv2.pygsl_odeiv2_step
+_control = odeiv2.pygsl_odeiv2_control
+evolve = odeiv2.pygsl_odeiv2_evolve
 
 
 class control_y_new(_control):

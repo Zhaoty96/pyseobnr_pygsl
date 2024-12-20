@@ -48,17 +48,17 @@
 
     # requirements:
     dependencies = [
-        "numpy>=1.23.0",
+        "numpy>=1.23.0, <2.0",
         "scipy>=1.8.0",
         "matplotlib",
         "h5py",
         "numexpr",
         "numba",
         "qnm",
-        "scri",
+        "scri<2024",
         "setuptools",
         "rich",
-        "pygsl_lite",
+        "pygsl",
         "lalsuite",
     ]
 
@@ -76,10 +76,16 @@
 [project.entry-points."pycbc.waveform.td"]
     SEOBNRv5HM = "pyseobnr.plugins.pycbc_plugin:PySEOBNRv5PyCBCPlugin_v5HM.gen_td"
     SEOBNRv5PHM = "pyseobnr.plugins.pycbc_plugin:PySEOBNRv5PyCBCPlugin_v5PHM.gen_td"
+    SEOBNRv5E_tdtaper = "pyseobnr.plugins.genwave:gen_seobnrv5e_td"
 
 [project.entry-points."pycbc.waveform.fd"]
     SEOBNRv5HM = "pyseobnr.plugins.pycbc_plugin:PySEOBNRv5PyCBCPlugin_v5HM.gen_fd"
     SEOBNRv5PHM = "pyseobnr.plugins.pycbc_plugin:PySEOBNRv5PyCBCPlugin_v5PHM.gen_fd"
+    SEOBNRv5E = "pyseobnr.plugins.genwave:gen_seobnrv5e_fd"
+    SEOBNRv5EHM = "pyseobnr.plugins.genwave:gen_seobnrv5ehm_fd"
+
+[project.entry-points."pycbc.waveform.length"]
+    SEOBNRv5PHM = "pyseobnr.plugins.genwave:seobnrv5phm_length_in_time"
 
 [tool.setuptools_scm]
     write_to = "pyseobnr/_version.py"

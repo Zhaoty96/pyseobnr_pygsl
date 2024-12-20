@@ -8,7 +8,7 @@ from __future__ import annotations
 import logging
 
 import numpy as np
-from pygsl_lite import spline
+from pygsl import spline
 from scipy.interpolate import CubicSpline
 from scipy.optimize import root_scalar
 

@@ -10,8 +10,8 @@ from typing import Literal
 
 import lal
 import numpy as np
-import pygsl_lite.errno as errno
-import pygsl_lite.odeiv2 as odeiv2
+import pygsl.errno as errno
+import pygsl.odeiv2 as odeiv2
 
 from ..utils.containers import EOBParams
 from ..utils.utils_eccentric import (
@@ -326,9 +326,9 @@ def compute_dynamics_ecc_opt(
         integrator_gsl_type = odeiv2.step_rk8pd
     else:
         raise ValueError("Incorrect value for the numerical integrator type.")
-    s = odeiv2.pygsl_lite_odeiv2_step(integrator_gsl_type, num_eqs)
+    s = odeiv2.pygsl_odeiv2_step(integrator_gsl_type, num_eqs)
     c = control_y_new(atol, rtol)
-    e = odeiv2.pygsl_lite_odeiv2_evolve(num_eqs)
+    e = odeiv2.pygsl_odeiv2_evolve(num_eqs)
 
     # Time step
     if h_0:
@@ -721,9 +721,9 @@ def compute_dynamics_ecc_backwards_opt(
         integrator_gsl_type = odeiv2.step_rk8pd
     else:
         raise ValueError("Incorrect value for the numerical integrator type.")
-    s = odeiv2.pygsl_lite_odeiv2_step(integrator_gsl_type, num_eqs)
+    s = odeiv2.pygsl_odeiv2_step(integrator_gsl_type, num_eqs)
     c = control_y_new(atol, rtol)
-    e = odeiv2.pygsl_lite_odeiv2_evolve(num_eqs)
+    e = odeiv2.pygsl_odeiv2_evolve(num_eqs)
 
     h = -1.0  # Backwards time step
 
@@ -884,9 +884,9 @@ def compute_dynamics_ecc_secular_opt(
         integrator_gsl_type = odeiv2.step_rk8pd
     else:
         raise ValueError("Incorrect value for the numerical integrator type.")
-    s = odeiv2.pygsl_lite_odeiv2_step(integrator_gsl_type, num_eqs)
+    s = odeiv2.pygsl_odeiv2_step(integrator_gsl_type, num_eqs)
     c = control_y_new(atol, rtol)
-    e = odeiv2.pygsl_lite_odeiv2_evolve(num_eqs)
+    e = odeiv2.pygsl_odeiv2_evolve(num_eqs)
 
     # Backwards time step
     h = -abs(h_0)

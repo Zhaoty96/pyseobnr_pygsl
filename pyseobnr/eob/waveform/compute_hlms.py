@@ -9,7 +9,7 @@ from typing import Any, Dict, Final
 
 import numpy as np
 from lalinference.imrtgr import nrutils
-from pygsl_lite import spline
+from pygsl import spline
 from scipy.interpolate import InterpolatedUnivariateSpline
 
 from ...auxiliary.mode_mixing.auxiliary_functions_modemixing import (

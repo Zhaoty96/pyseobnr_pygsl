@@ -4,8 +4,8 @@ Contains functions associated with evolving the equations of motion
 """
 
 import numpy as np
-import pygsl_lite.errno as errno
-import pygsl_lite.odeiv2 as odeiv2
+import pygsl.errno as errno
+import pygsl.odeiv2 as odeiv2
 from numba import jit
 from scipy.interpolate import CubicSpline
 
@@ -13,9 +13,9 @@ from ..utils.utils import interpolate_dynamics, iterative_refinement
 from .initial_conditions_aligned_opt import computeIC_opt
 from .rhs_aligned import augment_dynamics, compute_H_and_omega, get_rhs
 
-step = odeiv2.pygsl_lite_odeiv2_step
-_control = odeiv2.pygsl_lite_odeiv2_control
-evolve = odeiv2.pygsl_lite_odeiv2_evolve
+step = odeiv2.pygsl_odeiv2_step
+_control = odeiv2.pygsl_odeiv2_control
+evolve = odeiv2.pygsl_odeiv2_evolve
 
 
 class control_y_new(_control):

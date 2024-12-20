@@ -10,7 +10,7 @@ import numpy as np
 import quaternion
 import scri
 from lalinference.imrtgr import nrutils
-from pygsl_lite import spline
+from pygsl import spline
 from scipy.interpolate import CubicSpline
 from scipy.optimize import root
 
