@@ -3,6 +3,7 @@ from datetime import datetime
 import lal
 import numpy as np
 from jinja2 import Environment, FileSystemLoader
+
 from pyseobnr.generate_waveform import GenerateWaveform, generate_modes_opt
 
 np.set_printoptions(precision=16)

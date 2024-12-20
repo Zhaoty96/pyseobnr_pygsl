@@ -77,6 +77,7 @@
     SEOBNRv5HM = "pyseobnr.plugins.pycbc_plugin:PySEOBNRv5PyCBCPlugin_v5HM.gen_td"
     SEOBNRv5PHM = "pyseobnr.plugins.pycbc_plugin:PySEOBNRv5PyCBCPlugin_v5PHM.gen_td"
     SEOBNRv5E_tdtaper = "pyseobnr.plugins.genwave:gen_seobnrv5e_td"
+    SEOBNRv5EHM = "pyseobnr.plugins.genwave:gen_seobnrv5ehm_td"
 
 [project.entry-points."pycbc.waveform.fd"]
     SEOBNRv5HM = "pyseobnr.plugins.pycbc_plugin:PySEOBNRv5PyCBCPlugin_v5HM.gen_fd"
